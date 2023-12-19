@@ -30,3 +30,16 @@ export default async function ArticlePage({params}){
     )
 
 }
+
+
+export async function generateStaticParams(){
+    const articles = await fetch(`http://localhost:3004/articles`)
+    .then((res)=>res.json());
+
+    return articles.map((article)=>{
+        return {
+            id: article.id.toString()
+        }
+    })
+
+}

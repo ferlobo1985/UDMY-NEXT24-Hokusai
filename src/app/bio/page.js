@@ -1,4 +1,5 @@
 
+export const dynamic = 'force-dynamic';
 
 export default async function BioPage(){
     const request = await fetch('https://baconipsum.com/api/?type=all-meat&para=5');
